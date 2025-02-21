@@ -7,7 +7,7 @@
         xmlns:system="clr-namespace:System;assembly=System.Runtime"
         xmlns:enums="clr-namespace:OOP_Lab_1.Models.Enums"
         mc:Ignorable="d"
-        Title="Создать компьютер" Height="600" Width="300">
+        Title="Создать компьютер" Height="570" Width="300">
     <Window.Resources>
         <ObjectDataProvider x:Key="Manufacturers" MethodName="GetValues"
                             ObjectType="{x:Type system:Enum}">
@@ -47,7 +47,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Модель</Label>
-                    <TextBox Grid.Row="1" FontSize="14"></TextBox>
+                    <TextBox Grid.Row="1" FontSize="14" Name="ProcessorModelTextBox"></TextBox>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -55,7 +55,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Частота</Label>
-                    <TextBox Grid.Row="1" FontSize="14"></TextBox>
+                    <TextBox Grid.Row="1" FontSize="14" Name="ProcessorFrequencyTextBox"></TextBox>
                 </Grid>
                 <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
@@ -63,7 +63,8 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Производитель</Label>
-                    <ComboBox Grid.Row="1" ItemsSource="{Binding Source={StaticResource Manufacturers}}" SelectedIndex="0"></ComboBox>
+                    <ComboBox Grid.Row="1" Name="ProcessorManufactComboBox"
+                              ItemsSource="{Binding Source={StaticResource Manufacturers}}" SelectedIndex="0" ></ComboBox>
                 </Grid>
                 
             </Grid>
@@ -85,7 +86,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Объем</Label>
-                    <TextBox Grid.Row="1" FontSize="14"></TextBox>
+                    <TextBox Grid.Row="1" FontSize="14" Name="RamSizeTextBox"></TextBox>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -93,7 +94,8 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Тип</Label>
-                    <ComboBox Grid.Row="1" ItemsSource="{Binding Source={StaticResource RamTypes}}" SelectedIndex="0"></ComboBox>
+                    <ComboBox Grid.Row="1" Name="RamTypeComboBox"
+                              ItemsSource="{Binding Source={StaticResource RamTypes}}" SelectedIndex="0"></ComboBox>
                 </Grid>
                 
             </Grid>
@@ -115,7 +117,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Объем</Label>
-                    <TextBox Grid.Row="1" FontSize="14"></TextBox>
+                    <TextBox Grid.Row="1" FontSize="14" Name="StorageSizeTextBox"></TextBox>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -123,7 +125,8 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Тип</Label>
-                    <ComboBox Grid.Row="1" ItemsSource="{Binding Source={StaticResource StorageTypes}}" SelectedIndex="0"></ComboBox>
+                    <ComboBox Grid.Row="1" Name="StorageTypeComboBox"
+                              ItemsSource="{Binding Source={StaticResource StorageTypes}}" SelectedIndex="0"></ComboBox>
                 </Grid>
                 
             </Grid>
@@ -146,7 +149,7 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Цена</Label>
-                    <TextBox Grid.Row="1" FontSize="14"></TextBox>
+                    <TextBox Grid.Row="1" FontSize="14" Name="ComputerPriceTextBox"></TextBox>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -154,9 +157,10 @@
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
                     <Label FontSize="12" Padding="0 0 0 0">Производитель</Label>
-                    <ComboBox Grid.Row="1" ItemsSource="{Binding Source={StaticResource Manufacturers}}" SelectedIndex="0"></ComboBox>
+                    <ComboBox Grid.Row="1" Name="CompManufactComboBox"
+                              ItemsSource="{Binding Source={StaticResource Manufacturers}}" SelectedIndex="0"></ComboBox>
                 </Grid>
-                <Button Grid.Row="2" Margin="0 5 0  5">Добавить</Button>
+                <Button Grid.Row="2" Margin="0 5 0  5" Name="AddComputerBtn" Click="AddComputerBtn_OnClick">Добавить</Button>
             </Grid>
         </Grid>
         <Grid.RowDefinitions>

@@ -12,6 +12,8 @@ public class Computer
     public Processor CPU { get; set; }
     public Ram Memory { get; set; }
     
+    private int _id;
+    
     private int _storageGB;
     public int StorageGB
     {
@@ -31,6 +33,7 @@ public class Computer
     public Computer()
     {
         InstanceCount++;
+        Id = InstanceCount;
         CreationDate = DateTime.Now;
     }
 
@@ -52,6 +55,12 @@ public class Computer
         StorageGB = storageGB;
         StorageType = storageType;
         CreationDate = DateTime.Now;
+    }
+    
+    public int Id
+    {
+        get => _id; 
+        set => _id = value;
     }
 
     public string GetStorageInHex() => $"0x{StorageGB:X}";
